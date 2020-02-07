@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="MirrorBogieR">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0112000021448019 0.0339239276584175 0.0092744825818127"
+        rpy="0 0 0" />
+      <mass
+        value="0.0220008072318839" />
+      <inertia
+        ixx="5.17108719466703E-06"
+        ixy="2.14038894047293E-12"
+        ixz="1.0921688052426E-12"
+        iyy="2.68094970357348E-06"
+        iyz="-2.93984284753893E-07"
+        izz="6.30303649086365E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MirrorBogieR/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MirrorBogieR/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="BogieR">
+    <inertial>
+      <origin
+        xyz="0.0012451 0.019213 0.059188"
+        rpy="0 0 0" />
+      <mass
+        value="0.2604" />
+      <inertia
+        ixx="0.00013302"
+        ixy="4.4666E-06"
+        ixz="-7.651E-06"
+        iyy="0.00022904"
+        iyz="-2.842E-05"
+        izz="0.0001933" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MirrorBogieR/meshes/BogieR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MirrorBogieR/meshes/BogieR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RockerR_Bogie"
+    type="continuous">
+    <origin
+      xyz="0.180999685953231 0.061999892425969 0.00269999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="RockerR" />
+    <child
+      link="BogieR" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="MidWheelR">
+    <inertial>
+      <origin
+        xyz="3.2168E-07 1.6938E-07 -0.040318"
+        rpy="0 0 0" />
+      <mass
+        value="0.11466" />
+      <inertia
+        ixx="0.0002563"
+        ixy="6.7254E-09"
+        ixz="-7.6009E-10"
+        iyy="0.0002563"
+        iyz="9.2957E-10"
+        izz="0.00032223" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MirrorBogieR/meshes/MidWheelR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MirrorBogieR/meshes/MidWheelR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BogieR_MWR"
+    type="continuous">
+    <origin
+      xyz="-0.12382 0.054495 0.1494"
+      rpy="0 0 0.61828" />
+    <parent
+      link="BogieR" />
+    <child
+      link="MidWheelR" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="RearSteeringR">
+    <inertial>
+      <origin
+        xyz="0.021436 -0.00036938 -0.075591"
+        rpy="0 0 0" />
+      <mass
+        value="0.12473" />
+      <inertia
+        ixx="0.00013873"
+        ixy="6.7048E-06"
+        ixz="-4.8002E-05"
+        iyy="0.00023082"
+        iyz="8.8229E-06"
+        izz="0.00012966" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MirrorBogieR/meshes/RearSteeringR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MirrorBogieR/meshes/RearSteeringR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BogieR_RSR"
+    type="revolute">
+    <origin
+      xyz="0.15173 0.017546 0.070331"
+      rpy="1.5991 -0.56126 0.321" />
+    <parent
+      link="BogieR" />
+    <child
+      link="RearSteeringR" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="WheelRSR">
+    <inertial>
+      <origin
+        xyz="3.1444E-07 1.6198E-07 -0.040318"
+        rpy="0 0 0" />
+      <mass
+        value="0.11466" />
+      <inertia
+        ixx="0.0002563"
+        ixy="2.148E-09"
+        ixz="-2.9676E-09"
+        iyy="0.00025629"
+        iyz="-1.999E-09"
+        izz="0.00032223" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MirrorBogieR/meshes/WheelRSR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MirrorBogieR/meshes/WheelRSR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RSR_WheelRSR"
+    type="continuous">
+    <origin
+      xyz="-0.048899 0.0031529 -0.13104"
+      rpy="1.5708 -1.5023 -1.6392" />
+    <parent
+      link="RearSteeringR" />
+    <child
+      link="WheelRSR" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>

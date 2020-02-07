@@ -1,0 +1,65 @@
+digraph G {
+node [shape=box];
+"RoverChassis" [label="RoverChassis"];
+"Rocker2" [label="Rocker2"];
+"Bogie2" [label="Bogie2"];
+"MidWheel2" [label="MidWheel2"];
+"RearSteering2" [label="RearSteering2"];
+"WheelRS2" [label="WheelRS2"];
+"FrontSteering2" [label="FrontSteering2"];
+"WheelsFS2" [label="WheelsFS2"];
+"Arm" [label="Arm"];
+"Arm2" [label="Arm2"];
+"Arm3" [label="Arm3"];
+"EFE" [label="EFE"];
+"Rocker1" [label="Rocker1"];
+"Bogie1" [label="Bogie1"];
+"MidWheel1" [label="MidWheel1"];
+"RearSteering1" [label="RearSteering1"];
+"WheelRS1" [label="WheelRS1"];
+"FrontSteering1" [label="FrontSteering1"];
+"WheelFS1" [label="WheelFS1"];
+"MastArm" [label="MastArm"];
+"MastHead" [label="MastHead"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"RoverChassis" -> "Chasiss_Rocker2" [label="xyz: 0.073 -0.1572 0.0527 \nrpy: -1.5708 0.073342 3.14159"]
+"Chasiss_Rocker2" -> "Rocker2"
+"Rocker2" -> "Rocker2_Bogie2" [label="xyz: 0.181 0.0619999 0.0027 \nrpy: 0 -0 0"]
+"Rocker2_Bogie2" -> "Bogie2"
+"Bogie2" -> "Bogie2_MW2" [label="xyz: -0.0939371 0.0973704 0.1494 \nrpy: 0 0 -0.302686"]
+"Bogie2_MW2" -> "MidWheel2"
+"Bogie2" -> "Bogie2_RS2" [label="xyz: 0.147092 -0.0411607 0.0703311 \nrpy: 1.59903 -0.558724 -0.0668909"]
+"Bogie2_RS2" -> "RearSteering2"
+"RearSteering2" -> "RS2_WheelRS2" [label="xyz: -0.024177 -0.04262 -0.13104 \nrpy: 1.5708 -1.5023 -0.52001"]
+"RS2_WheelRS2" -> "WheelRS2"
+"Rocker2" -> "Rocker2_FS2" [label="xyz: -0.21167 0.028941 0.076007 \nrpy: -1.5674 -0.62594 3.1396"]
+"Rocker2_FS2" -> "FrontSteering2"
+"FrontSteering2" -> "FS2_WheelsFS2" [label="xyz: -0.027711 0.041619 -0.13106 \nrpy: 1.5708 0.70491 -2.558"]
+"FS2_WheelsFS2" -> "WheelsFS2"
+"RoverChassis" -> "Chassis_Arm" [label="xyz: 0.253052 0.070453 0.0609914 \nrpy: 1.5708 -0.130633 -3.14159"]
+"Chassis_Arm" -> "Arm"
+"Arm" -> "Arm_Arm2" [label="xyz: 0 0.11924 0 \nrpy: 3.14159 4.23516e-22 1.5708"]
+"Arm_Arm2" -> "Arm2"
+"Arm2" -> "Arm2_Arm3" [label="xyz: -0.00231377 0.0917099 0.0167 \nrpy: 1.5708 0.0495995 -0.0298514"]
+"Arm2_Arm3" -> "Arm3"
+"Arm3" -> "Arm3_EFE" [label="xyz: 0.005 -0.014 -0.028 \nrpy: -1.5708 0 0"]
+"Arm3_EFE" -> "EFE"
+"RoverChassis" -> "Chassis_Rocker1" [label="xyz: 0.073 0.1572 0.0527 \nrpy: 1.5708 -0.073241 3.14159"]
+"Chassis_Rocker1" -> "Rocker1"
+"Rocker1" -> "Rocker1_Bogie1" [label="xyz: 0.181 -0.0619999 0.0227 \nrpy: 0 0 -1.5708"]
+"Rocker1_Bogie1" -> "Bogie1"
+"Bogie1" -> "Bogie1_MW1" [label="xyz: 0.0869482 -0.103156 0.1309 \nrpy: 0 -0 0.865694"]
+"Bogie1_MW1" -> "MidWheel1"
+"Bogie1" -> "Bogie1_RS1" [label="xyz: -0.0257731 0.150553 0.0503311 \nrpy: -1.59518 0.192038 1.51476"]
+"Bogie1_RS1" -> "RearSteering1"
+"RearSteering1" -> "RS1_WHeelRS1" [label="xyz: 0.0081708 0.049328 -0.13087 \nrpy: 1.5708 -1.4045 2.9805"]
+"RS1_WHeelRS1" -> "WheelRS1"
+"Rocker1" -> "Rocker1_FS1" [label="xyz: -0.211673 -0.0289412 0.0760067 \nrpy: 1.56802 -0.126469 -3.14123"]
+"Rocker1_FS1" -> "FrontSteering1"
+"FrontSteering1" -> "FS1_WheelFS1" [label="xyz: -0.00253457 -0.0499357 -0.131195 \nrpy: 1.5708 -1.33801 -0.0497903"]
+"FS1_WheelFS1" -> "WheelFS1"
+"RoverChassis" -> "RoverChassis_Mast" [label="xyz: 0.13149 -0.053006 0.14751 \nrpy: 1.5708 -0.0056094 2.3562"]
+"RoverChassis_Mast" -> "MastArm"
+"MastArm" -> "MastArm_MastHead" [label="xyz: 0.00029854 0.15045 0.004 \nrpy: 1.5708 0.79479 7.92524e-17"]
+"MastArm_MastHead" -> "MastHead"
+}

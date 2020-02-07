@@ -1,0 +1,238 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="arm" params="">
+  <link
+    name="Arm">
+    <inertial>
+      <origin
+        xyz="-0.00013011 0.057834 0.0017688"
+        rpy="0 0 0" />
+      <mass
+        value="0.065681" />
+      <inertia
+        ixx="0.00010918"
+        ixy="-1.6866E-09"
+        ixz="2.4327E-10"
+        iyy="9.2922E-06"
+        iyz="2.444E-07"
+        izz="0.00011408" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshes/Arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshes/Arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Chassis_Arm"
+    type="revolute">
+    <origin
+      xyz="0.253051748698285 0.0704529943574704 0.0609913956856037"
+      rpy="1.5707963267949 -0.130632744206875 -3.14159265358979" />
+    <parent
+      link="RoverChassis" />
+    <child
+      link="Arm" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Arm2">
+    <inertial>
+      <origin
+        xyz="0.0014503 0.03926 0.016609"
+        rpy="0 0 0" />
+      <mass
+        value="0.051274" />
+      <inertia
+        ixx="5.5647E-05"
+        ixy="-1.4498E-06"
+        ixz="-8.8093E-09"
+        iyy="9.5179E-06"
+        iyz="-2.9315E-07"
+        izz="5.9312E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshes/Arm2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshes/Arm2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm_Arm2"
+    type="revolute">
+    <origin
+      xyz="0 0.11924 0"
+      rpy="-3.1416 0 1.5708" />
+    <parent
+      link="Arm" />
+    <child
+      link="Arm2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Arm3">
+    <inertial>
+      <origin
+        xyz="0.0050459 -0.0052647 -0.017841"
+        rpy="0 0 0" />
+      <mass
+        value="0.016829" />
+      <inertia
+        ixx="3.9904E-06"
+        ixy="-4.0705E-09"
+        ixz="-1.1789E-08"
+        iyy="5.1228E-06"
+        iyz="-5.8731E-07"
+        izz="2.6647E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshes/Arm3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshes/Arm3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm2_Arm3"
+    type="revolute">
+    <origin
+      xyz="-0.00231376659955707 0.0917099175886816 0.0167"
+      rpy="1.5707963267949 0.0495995429747262 -0.0298514149555396" />
+    <parent
+      link="Arm2" />
+    <child
+      link="Arm3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="EFE">
+    <inertial>
+      <origin
+        xyz="0.035646 -0.03828 0.00179"
+        rpy="0 0 0" />
+      <mass
+        value="0.035617" />
+      <inertia
+        ixx="7.9239E-06"
+        ixy="5.0355E-06"
+        ixz="-9.5166E-07"
+        iyy="8.5973E-06"
+        iyz="1.1051E-06"
+        izz="1.1584E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshes/EFE.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshes/EFE.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm3_EFE"
+    type="revolute">
+    <origin
+      xyz="0.005 -0.014 -0.0279999999985077"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="Arm3" />
+    <child
+      link="EFE" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  </xacro:macro>
+  </robot>

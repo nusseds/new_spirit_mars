@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot name="new_spirit_mars_rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Inertia matrices -->
+        <xacro:include filename="$(find new_spirit_mars)/urdf/macros.xacro" />
+        <!-- Robot constants and properties -->
+        <xacro:include filename="$(find new_spirit_mars)/urdf/new_spirit_mars_rover_properties.xacro" />
+        <!-- Gazebo aspects of the robot -->
+        <!--xacro:include filename="$(find new_spirit_mars)/urdf/curiosity_mars_rover.gazebo" -->
+        <!-- Chasis -->
+        <xacro:include filename="$(find new_spirit_mars)/urdf/chassis.xacro" />
+        <!-- Wheel Groups -->
+        <!--xacro:include filename="$(find new_spirit_mars)/urdf/wheel.xacro" -->
+        <xacro:include filename="$(find new_spirit_mars)/urdf/left_wheel_group.xacro" />
+        <xacro:include filename="$(find new_spirit_mars)/urdf/bogie_left.xacro" />
+
+        <xacro:include filename="$(find new_spirit_mars)/urdf/right_wheel_group.xacro" />
+        <xacro:include filename="$(find new_spirit_mars)/urdf/bogie_right.xacro" />
+        <!-- Arm -->
+        <xacro:include filename="$(find new_spirit_mars)/urdf/arm.xacro" />
+        <!-- Sensor Mast -->
+        <xacro:include filename="$(find new_spirit_mars)/urdf/mast.xacro" />
+
+        <chassis_body/>
+        <left_wheel_tree/>
+        <bogie_left/>
+        <right_wheel_tree/>
+        <bogie_right/>
+        <arm/>
+        <mast/>
+
+
+</robot>

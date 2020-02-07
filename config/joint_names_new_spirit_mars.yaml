@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'RoverChassis_Mast', 'MastArm_MastHead', 'Chassis_Arm', 'Arm_Arm2', 'Arm2_Arm3', 'Arm3_EFE', 'Chassis_Rocker1', 'Rocker1_Bogie1', 'Bogie1_MW1', 'Bogie1_RS1', 'RS1_WHeelRS1', 'Rocker1_FS1', 'FS1_WheelFS1', 'Chasiss_Rocker2', 'Rocker2_Bogie2', 'Bogie2_MW2', 'Bogie2_RS2', 'RS2_WheelRS2', 'Rocker2_FS2', 'FS2_WheelsFS2', ]

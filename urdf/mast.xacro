@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="mast" params="">
+
+<link
+  name="MastArm">
+  <inertial>
+    <origin
+      xyz="-0.00021473 0.051397 -0.00073642"
+      rpy="0 0 0" />
+    <mass
+      value="0.040089" />
+    <inertia
+      ixx="8.1919E-05"
+      ixy="1.6871E-09"
+      ixz="5.5106E-10"
+      iyy="5.8703E-06"
+      iyz="-5.4206E-07"
+      izz="8.6546E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://new_spirit_mars/meshes/MastArm.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://new_spirit_mars/meshes/MastArm.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RoverChassis_Mast"
+  type="revolute">
+  <origin
+    xyz="0.13149 -0.053006 0.14751"
+    rpy="1.5708 -0.0056094 2.3562" />
+  <parent
+    link="RoverChassis" />
+  <child
+    link="MastArm" />
+  <axis
+    xyz="0 0 -1" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="MastHead">
+  <inertial>
+    <origin
+      xyz="-0.0013429 0.00089648 -0.022625"
+      rpy="0 0 0" />
+    <mass
+      value="0.037642" />
+    <inertia
+      ixx="5.6108E-05"
+      ixy="-1.2333E-09"
+      ixz="7.2038E-08"
+      iyy="1.6403E-05"
+      iyz="8.3386E-08"
+      izz="4.6655E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://new_spirit_mars/meshes/MastHead.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://new_spirit_mars/meshes/MastHead.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="MastArm_MastHead"
+  type="revolute">
+  <origin
+    xyz="0.00029854 0.15045 0.004"
+    rpy="1.5708 0.79479 0" />
+  <parent
+    link="MastArm" />
+  <child
+    link="MastHead" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+</xacro:macro>
+
+</robot>

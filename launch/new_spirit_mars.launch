@@ -1,0 +1,5 @@
+<launch>
+<include file="$(find new_spirit_mars)/launch/mars_world.launch"/>
+<include file="$(find new_spirit_mars)/launch/new_spirit_mars_rover_start.launch"/>
+</launch>
+

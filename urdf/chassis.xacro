@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="chassis_body" params="">
+  <link
+    name="RoverChassis">
+    <inertial>
+      <origin
+        xyz="0.0093614 -9.9176E-05 0.050783"
+        rpy="0 0 0" />
+      <mass
+        value="2.5513" />
+      <inertia
+        ixx="0.0059302"
+        ixy="-2.3769E-06"
+        ixz="8.4014E-05"
+        iyy="0.013"
+        iyz="-1.4168E-05"
+        izz="0.017599" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshes/RoverChassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.094118 0 0.20784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshes/RoverChassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  </xacro:macro>
+
+</robot>

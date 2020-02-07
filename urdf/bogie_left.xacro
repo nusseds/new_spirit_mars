@@ -1,0 +1,237 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="bogie_left" params="">
+
+<link
+  name="Bogie_L">
+  <inertial>
+    <origin
+      xyz="0.017291 -0.0084659 0.039187"
+      rpy="0 0 0" />
+    <mass
+      value="0.26039" />
+    <inertia
+      ixx="0.00020918"
+      ixy="-3.9151E-05"
+      ixz="-2.8465E-05"
+      iyy="0.00015289"
+      iyz="7.486E-06"
+      izz="0.0001933" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://new_spirit_mars/meshes/Bogie_L.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://new_spirit_mars/meshes/Bogie_L.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RockerL_BogieL"
+  type="revolute">
+  <origin
+    xyz="0.181 -0.062 0.0227"
+    rpy="0 0 -1.2" />
+  <parent
+    link="RockerL" />
+  <child
+    link="Bogie_L" />
+  <axis
+    xyz="0 0 -1" />
+    <limit lower="${suspension_arm_B_L_limit_lower}" upper="${suspension_arm_B_L_limit_upper}" effort="${suspension_effort}" velocity="${suspension_speed}"/>
+    <joint_properties damping="${suspension_damping}" friction="${suspension_friction}"/>
+</joint>
+
+<transmission name="BogieL">
+<type>transmission_interface/SimpleTransmission</type>
+<joint name="RockerL_BogieL">
+<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+</joint>
+<actuator name="BogieLMotor">
+<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+<mechanicalReduction>1</mechanicalReduction>
+</actuator>
+</transmission>
+
+<link
+  name="MidWheelL">
+  <inertial>
+    <origin
+      xyz="2.3122E-07 2.7072E-08 -0.04032"
+      rpy="0 0 0" />
+    <mass
+      value="0.11468" />
+    <inertia
+      ixx="0.00025633"
+      ixy="5.1109E-10"
+      ixz="9.4466E-10"
+      iyy="0.00025634"
+      iyz="-2.8319E-10"
+      izz="0.00032227" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://new_spirit_mars/meshes/MidWheelL.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0 0 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://new_spirit_mars/meshes/MidWheelL.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="BogieL_MWL"
+  type="continuous">
+  <origin
+    xyz="-0.014326 -0.13425 0.1309"
+    rpy="0 0 1.5375" />
+  <parent
+    link="Bogie_L" />
+  <child
+    link="MidWheelL" />
+  <axis
+    xyz="0 0 -1" />
+</joint>
+<link
+  name="RearSteeringL">
+  <inertial>
+    <origin
+      xyz="-0.021141 0.0035523 -0.075591"
+      rpy="0 0 0" />
+    <mass
+      value="0.12474" />
+    <inertia
+      ixx="0.0001394"
+      ixy="1.0278E-05"
+      ixz="4.8811E-05"
+      iyy="0.00023016"
+      iyz="-9.2341E-08"
+      izz="0.00012967" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://new_spirit_mars/meshes/RearSteeringL.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://new_spirit_mars/meshes/RearSteeringL.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="BogieL_RSL"
+  type="revolute">
+  <origin xyz="0.0888355536938871 0.122345515642702 0.0503310870072487"
+          rpy="-1.67683384925633 -1.48268572159206 0.811299555949701"/>
+  <parent
+    link="Bogie_L" />
+  <child
+    link="RearSteeringL" />
+  <axis
+    xyz="0 0 -1" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="WheelRSL">
+  <inertial>
+    <origin
+      xyz="2.0319E-07 2.6485E-10 -0.04032"
+      rpy="0 0 0" />
+    <mass
+      value="0.11468" />
+    <inertia
+      ixx="0.00025633"
+      ixy="-3.007E-09"
+      ixz="5.632E-10"
+      iyy="0.00025633"
+      iyz="-4.9834E-09"
+      izz="0.00032227" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://new_spirit_mars/meshes/WheelRSL.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0 0 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://new_spirit_mars/meshes/WheelRSL.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RSL_WheelRSL"
+  type="continuous">
+  <origin
+    xyz="0.049691 -0.0055546 -0.13103"
+    rpy="1.5708 1.1781 1.4555" />
+  <parent
+    link="RearSteeringL" />
+  <child
+    link="WheelRSL" />
+  <axis
+    xyz="0 0 -1" />
+</joint>
+</xacro:macro>
+</robot>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<!-- Constants -->
+	<xacro:property name="PI" value="3.1415926535897931"/>
+	
+	<!-- Scaling -->
+	<xacro:property name="scale_XYZ" value="1.0"/>
+
+	<!-- Chassis properties -->
+
+
+
+	<!-- Wheel Trees -->
+
+        <xacro:property name="suspension_arm_F_L_limit_upper" value="0.1"/>
+        <xacro:property name="suspension_arm_F_L_limit_lower" value="-0.3"/>
+        <xacro:property name="suspension_arm_B_L_limit_lower" value="-1.0"/>
+        <xacro:property name="suspension_arm_B_L_limit_upper" value="1.0"/>
+
+	<xacro:property name="suspension_arm_B2_lower_limit" value="-1.2"/>
+	<xacro:property name="suspension_arm_B2_upper_limit" value="0.1"/>
+
+	<xacro:property name="suspension_steer_limit" value="0.6"/>
+	<xacro:property name="suspension_steer_effort" value="10000.0"/>
+	<xacro:property name="suspension_steer_velocity" value="10.0"/>
+
+	<xacro:property name="suspension_effort" value="10000.0"/>
+	<xacro:property name="suspension_speed" value="10.0"/>
+	<xacro:property name="suspension_damping" value="0.5"/>
+	<xacro:property name="suspension_friction" value="0.5"/>
+
+	<!-- Wheels properties -->
+	<xacro:property name="wheelWidth" value="0.39473"/>
+	<xacro:property name="wheelRadius" value="0.242647"/>
+	<xacro:property name="wheelMass" value="2.07"/>
+
+	<!-- Arm -->
+
+
+	<xacro:property name="arm_01_limit" value="1.57"/>
+	<xacro:property name="arm_02_limit" value="1.57"/>
+	<xacro:property name="arm_03_limit" value="1.57"/>
+	<xacro:property name="arm_04_limit" value="1.57"/>
+
+
+
+	<!-- Mast -->
+
+	<xacro:property name="mast_p_upper_limit" value="1.57"/>
+	<xacro:property name="mast_p_lower_limit" value="0.0"/>
+
+
+	<xacro:property name="mast_cameras_limit" value="1.57"/>
+
+
+
+	
+	
+</robot>

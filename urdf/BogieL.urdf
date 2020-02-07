@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="BogieL">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.033924 -0.0112 0.0092745"
+        rpy="0 0 0" />
+      <mass
+        value="0.022001" />
+      <inertia
+        ixx="2.6809E-06"
+        ixy="4.1603E-12"
+        ixz="-2.9399E-07"
+        iyy="5.1711E-06"
+        iyz="3.1025E-12"
+        izz="6.303E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://BogieL/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://BogieL/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Bogie_L">
+    <inertial>
+      <origin
+        xyz="0.017291 -0.0084659 0.039187"
+        rpy="0 0 0" />
+      <mass
+        value="0.26039" />
+      <inertia
+        ixx="0.00020918"
+        ixy="-3.9151E-05"
+        ixz="-2.8465E-05"
+        iyy="0.00015289"
+        iyz="7.486E-06"
+        izz="0.0001933" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://BogieL/meshes/Bogie_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://BogieL/meshes/Bogie_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RockerL_BogieL"
+    type="continuous">
+    <origin
+      xyz="0.181 -0.062 0.0227"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="RockerL" />
+    <child
+      link="BogieL" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="MidWheelL">
+    <inertial>
+      <origin
+        xyz="2.3122E-07 2.7072E-08 -0.04032"
+        rpy="0 0 0" />
+      <mass
+        value="0.11468" />
+      <inertia
+        ixx="0.00025633"
+        ixy="5.1109E-10"
+        ixz="9.4466E-10"
+        iyy="0.00025634"
+        iyz="-2.8319E-10"
+        izz="0.00032227" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://BogieL/meshes/MidWheelL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://BogieL/meshes/MidWheelL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BogieL_MWL"
+    type="continuous">
+    <origin
+      xyz="-0.014326 -0.13425 0.1309"
+      rpy="0 0 1.5375" />
+    <parent
+      link="Bogie_L" />
+    <child
+      link="MidWheelL" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="RearSteeringL">
+    <inertial>
+      <origin
+        xyz="0.011618 -0.018016 -0.075591"
+        rpy="0 0 0" />
+      <mass
+        value="0.12474" />
+      <inertia
+        ixx="0.00019919"
+        ixy="4.424E-05"
+        ixz="-3.2816E-05"
+        iyy="0.00017036"
+        iyz="3.6131E-05"
+        izz="0.00012967" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://BogieL/meshes/RearSteeringL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://BogieL/meshes/RearSteeringL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BogieL_RSL"
+    type="revolute">
+    <origin
+      xyz="0.090636 0.12295 0.050331"
+      rpy="-1.6768 1.3427 0.6113" />
+    <parent
+      link="Bogie_L" />
+    <child
+      link="RearSteeringL" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="WheelRSL">
+    <inertial>
+      <origin
+        xyz="2.1253E-07 3.6153E-08 -0.04032"
+        rpy="0 0 0" />
+      <mass
+        value="0.11468" />
+      <inertia
+        ixx="0.00025632"
+        ixy="-7.1018E-10"
+        ixz="1.0667E-09"
+        iyy="0.00025632"
+        iyz="-1.7815E-09"
+        izz="0.00032227" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://BogieL/meshes/WheelRSL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://BogieL/meshes/WheelRSL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RSL_WheelRSL"
+    type="continuous">
+    <origin
+      xyz="-0.029317 0.040504 -0.13085"
+      rpy="1.5708 0.16839 -2.5176" />
+    <parent
+      link="RearSteeringL" />
+    <child
+      link="WheelRSL" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>

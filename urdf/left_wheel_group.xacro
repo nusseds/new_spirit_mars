@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="left_wheel_tree" params="">
+  <link
+    name="RockerL">
+    <inertial>
+      <origin
+        xyz="-0.0500363133009319 -0.0236635466770382 0.0367831875501886"
+        rpy="0 0 0" />
+      <mass
+        value="0.294520052634494" />
+      <inertia
+        ixx="0.000108352308811494"
+        ixy="-1.91059786594333E-06"
+        ixz="4.73945831645257E-05"
+        iyy="0.000352090572486351"
+        iyz="2.00925754836304E-05"
+        izz="0.000386214589117905" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshesL/RockerL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshesL/RockerL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Chassis_RockerL"
+    type="revolute">
+    <origin
+    xyz="0.073 0.1572 0.0527"
+    rpy="1.5708 0 -3.1416"
+     />
+    <parent
+      link="RoverChassis" />
+    <child
+      link="RockerL" />
+    <axis
+      xyz="0 0 -1" />
+      <limit lower="${suspension_arm_F_L_limit_lower}" upper="${suspension_arm_F_L_limit_upper}" effort="${suspension_effort}" velocity="${suspension_speed}"/>
+      <joint_properties damping="${suspension_damping}" friction="${suspension_friction}"/>
+  </joint>
+
+<transmission name="RockerL">
+<type>transmission_interface/SimpleTransmission</type>
+<joint name="Chassis_RockerL">
+<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+</joint>
+<actuator name="RockerLMotor">
+<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+<mechanicalReduction>1</mechanicalReduction>
+</actuator>
+</transmission>
+
+  <link
+    name="FrontSteeringL">
+    <inertial>
+      <origin
+        xyz="-0.0058419883406795 -0.0200040415156816 -0.0803209162007755"
+        rpy="0 0 0" />
+      <mass
+        value="0.139116397378233" />
+      <inertia
+        ixx="0.000230782144493303"
+        ixy="-2.0426009947672E-05"
+        ixz="5.97754214782973E-06"
+        iyy="0.000149217638557369"
+        iyz="4.84414300316817E-05"
+        izz="0.000131981007718246" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshesL/FrontSteering.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshesL/FrontSteering.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RockerL_FSL"
+    type="revolute">
+    <origin
+      xyz="-0.21167 -0.028941 0.076007"
+      rpy="1.5674 -0.2248 -3.1396" />
+    <parent
+      link="RockerL" />
+    <child
+      link="FrontSteeringL" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="WheelFSL">
+    <inertial>
+      <origin
+        xyz="1.97379102021E-07 -4.49512316258449E-09 -0.0403200720130668"
+        rpy="0 0 0" />
+      <mass
+        value="0.114678000010855" />
+      <inertia
+        ixx="0.000256329302193645"
+        ixy="6.99468861961085E-10"
+        ixz="5.08009604930152E-10"
+        iyy="0.000256337022994517"
+        iyz="-5.0054397720179E-11"
+        izz="0.000322269999383538" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshesL/WheelFS.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://new_spirit_mars/meshesL/WheelFS.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FS_WheelFSL"
+    type="continuous">
+    <origin
+      xyz="0.011656 0.048622 -0.1312"
+      rpy="-1.5708 -1.3545 -0.23615" />
+    <parent
+      link="FrontSteeringL" />
+    <child
+      link="WheelFSL" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+  </xacro:macro>
+
+</robot>
